@@ -1,0 +1,208 @@
+Exercícios da atividade 15 - Aventuras na Recursão
+
+1) O Somatório do Tesouro Perdido
+
+#include <iostream>
+using namespace std;
+
+int somatorio (int numero){
+    if (numero == 0){
+        return 0;
+    } else {
+        return numero + somatorio(numero - 1);
+    }
+}
+
+int main(){
+    int N = 0;
+    
+    cout << "Quantas moedas tem o mapa? ";
+    cin >> N;
+    
+    cout << "Valor: " << somatorio (N);
+    
+    return 0;
+}
+
+
+2) O Fatorial do Dragão
+
+#include <iostream>
+using namespace std;
+
+int fatorial (int numero){
+    if (numero == 1){
+        return 1;
+    } else {
+        return numero * fatorial(numero - 1);
+    }
+}
+
+int main(){
+    int N = 0;
+    
+    cout << "Quantas escamas tem o dragão? ";
+    cin >> N;
+    
+    cout << "Poder: " << fatorial (N);
+    
+    return 0;
+}
+
+
+3) A escada dos cubos mágicos
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int somatorio (int numero){
+    if (numero == 1){
+        return 1;
+    } else {
+        return pow (numero, 3) + somatorio(numero - 1);
+    }
+}
+
+int main(){
+    int N = 0;
+    
+    cout << "Quantas degraus tem a escada? ";
+    cin >> N;
+    
+    cout << "Soma dos cubos: " << somatorio (N);
+    
+    return 0;
+}
+
+
+4) O feitiço da potência
+
+#include <iostream>
+using namespace std;
+
+int potencia (int base, int expoente){
+    if (expoente == 0){
+        return 1;
+    } else {
+        return base * potencia(base, expoente - 1);
+    }
+}
+
+int main(){
+    int k = 0, N = 0;
+    
+    cout << "Qual a base e expoente da magia? ";
+    cin >> k >> N;
+    
+    cout << "Potência: " << potencia (k, N);
+    
+    return 0;
+}
+
+
+5) A Sequência do Oráculo Fibonacci
+
+#include <iostream>
+using namespace std;
+
+int fibonacci (int numero){
+    if (numero == 0){
+        return 0;
+    } else if (numero == 1) {
+        return 1;
+    } else {
+        return fibonacci (numero - 1) + fibonacci (numero - 2);
+    }
+}
+
+int main(){
+    int N = 0;
+    
+    cout << "Qual o termo da sequência misteriosa? ";
+    cin >> N;
+    
+    cout << "Termo: " << fibonacci (N);
+    
+    return 0;
+}
+
+
+6) A Multiplicação das Sombras
+
+#include <iostream>
+using namespace std;
+
+int somatorio (int multiplicando, int multiplicador){
+    if (multiplicador == 0){
+        return 0;
+    } else {
+        return multiplicando + somatorio (multiplicando, multiplicador - 1);
+    }
+}
+
+int main(){
+    int m1 = 0, m2 = 0;
+    
+    cout << "Qual o multiplicando e o multiplicador? ";
+    cin >> m1 >> m2;
+    
+    cout << "Produto: " << somatorio (m1, m2);
+    
+    return 0;
+}
+
+
+7) O Caminho Crescente dos Números
+
+#include <iostream>
+using namespace std;
+
+int contador (int passo_final){
+    int passo_atual = 0;
+    
+    if (passo_atual == passo_final){
+        cout << "ei";
+        return passo_atual;
+    } else {
+        cout << "Passo atual: " << passo_atual << endl;
+        return contador (passo_atual + 1);
+    }
+}
+
+int main(){
+    int n = 0;
+    
+    cout << "Qual o número de passos dados? ";
+    cin >> n;
+    
+    cout << "Passos: " << contador (n);
+    
+    return 0;
+}
+
+
+8) O Caminho Decrescente do Guardião
+
+#include <iostream>
+using namespace std;
+
+int contagem_inversa (int inicio){
+    if (inicio == 0){
+        return 0;
+    } else {
+        cout << "Posição atual: " << inicio << endl;
+        return contagem_inversa (inicio - 1);
+    }
+}
+
+int main(){
+    int n = 0, final = 0;
+   
+    cout << "Qual o número para ser contado de forma decrescente? ";
+    cin >> n;
+   
+    final = contagem_inversa (n);
+    cout << "Posição final: " << final << endl;
+    return 0;
+}
